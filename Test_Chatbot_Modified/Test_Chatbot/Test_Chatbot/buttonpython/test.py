@@ -15,7 +15,7 @@ chatstr=""
 def chat(prompt):
     import openai
     #todo: Add ur API key here
-    apikey="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"
+    apikey="API_KEY"
     openai.api_key = apikey
 
     global chatstr
