@@ -16,7 +16,7 @@ import os
 def external(request):
     inp = request.POST.get('param')
 
-    script_path = r'C:\Users\Tanmay Walke\Desktop\Test_Chatbot_Prajwal\Test_Chatbot\Test_Chatbot\buttonpython\test.py'
+    script_path = r'C:\Users\Tanmay Walke\Desktop\Test_Chatbot\Test_Chatbot\Test_Chatbot\buttonpython\test.py'
     
 
     
