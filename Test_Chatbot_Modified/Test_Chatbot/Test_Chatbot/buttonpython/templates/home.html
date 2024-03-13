@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatbot and Virtual Assistant</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        .card {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
+            background-color: #007bff;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input.form-control {
+            margin-bottom: 15px;
+        }
+
+        .btn-voice {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            font-weight: bold;
+        }
+
+        .btn-voice:hover {
+            background-color: #218838;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            AI Chatbot and Virtual Assistant
+        </div>
+        <div class="card-body">
+            <form action="/external/" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    
+                    <input type="text" class="form-control" name="param" id="param" >
+                </div>
+                <button type="submit" class="btn btn-voice">Voice</button>
+            </form>
+
+            {% if data_external %}
+                <div class="result alert alert-success">
+                    Result from External Script: {{ data_external | safe }}
+                </div>
+            {% endif %}
+
+            {% if data1 %}
+                <div class="result alert alert-info">
+                    Result: {{ data1 | safe }}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
